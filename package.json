@@ -1,0 +1,14 @@
+{
+  "name": "poc",
+  "version": "1.0.0",
+  "description": "To run postman collections for POC",
+  "main": "index.js",
+  "scripts": {
+    "Api-test": "newman run TestCollections.postman_collection.json"
+  },
+  "author": "Venkat",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^3.10.0"
+  }
+}

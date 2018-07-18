@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "2055a02a-a2a5-4aca-aa74-dda0606d69be",
+		"name": "TestCollections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get-Posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb6608c4-4aec-41fc-939e-a4d01fa5592b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"    var jsonData = pm.response.json();",
+							"  ",
+							" console.log(jsonData);",
+							"",
+							"var ID=pm.environment.set(\"Id\",jsonData.id);",
+							"  console.log(ID);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{basepoint}}/posts",
+					"host": [
+						"{{basepoint}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Perticular Post by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{basepoint}}/posts",
+					"host": [
+						"{{basepoint}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
